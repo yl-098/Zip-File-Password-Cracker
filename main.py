@@ -1,14 +1,23 @@
 #This is a Zip-file password cracker script 
 #import module zipfile in order to access the zip file 
-#import modile tqdm to create a progress bar
+#import module tqdm to create a progress bar
 import zipfile
 from tqdm import tqdm
-#create a string called zfile and assign value test-evil-zip to this string
-user_file_input=input("Please enter the full path of your zip file")
-user_dict_input=input("Please eneter the full path of your dictionary file")
-zfile=zipfile.ZipFile(user_dict_input)
+import os
+#ask user to imput the exact location of the zip file 
+user_file_input=input("Enter the full path of your zip file: ")
+user_dict_input=input("Enter the full path of your dictionary file: ")
+if os.path.exists(user_file_input):
+  print("Valid zip Path")
+else:
+  print("Invalid Zip file path")
+if os.path.exists(user_dict_input):
+  print("Valid dictionary path")
+else:
+  print("Invalid dictionary path") 
+zfile=zipfile.ZipFile(user_file_input)
 #Create a string call password and assign the dictionary to this string 
-password="test-dict.txt" # 'rb')
+password=(user_dict_input) # 'rb')
 #create a new string call n_password to get the number of passwords in the dictionary file 
 #Need to open the file to count the passwords 
 n_password=len(list(open(password,'rb')))
@@ -28,10 +37,6 @@ with open(password,'rb') as password:
       print("Password Found")
       #the password is in a binary format hence it needs to be decoded and strip any spaces 
       print("The password is:", word.decode().strip())
-
-
-
-
 
 
 

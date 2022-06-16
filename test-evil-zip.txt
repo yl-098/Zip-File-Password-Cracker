@@ -1,2 +1,0 @@
-This is a Zip-file password cracking test 
-The correct password is: infected
