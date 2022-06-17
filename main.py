@@ -41,20 +41,3 @@ except Exception as e:
 
 
 
-
-#for word in password.readlines():
-  #try:
-    #zfile.extractall(pwd=word.strip())
-  #except:
-    #continue
-  #else:
-    #print(f"[+] Password Found")]
-
- # Print(f'The correct password is: {word})
-  
-  #Exception as e:
-     #print(e)
-   #print (password)
-#must use b before the password strings for encoding 
-#use the below exception handling for bad password 
-
